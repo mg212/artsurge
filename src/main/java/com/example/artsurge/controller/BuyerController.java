@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
-import com.example.ArtSurge.model.Buyer;
-import com.example.ArtSurge.service.BuyerService;
+import com.example.artsurge.model.Buyer;
+import com.example.artsurge.service.BuyerService;
 
 
 

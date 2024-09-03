@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-import com.example.ArtSurge.model.Role;
-import com.example.ArtSurge.model.User;
-import com.example.ArtSurge.service.UserService;
+import com.example.artsurge.model.Role;
+import com.example.artsurge.model.User;
+import com.example.artsurge.service.UserService;
 
 
 

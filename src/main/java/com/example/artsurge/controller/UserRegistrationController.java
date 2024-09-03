@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-import com.example.ArtSurge.model.User;
-import com.example.ArtSurge.repo.UserRegistrationDto;
-import com.example.ArtSurge.service.UserService;
+import com.example.artsurge.model.User;
+import com.example.artsurge.repo.UserRegistrationDto;
+import com.example.artsurge.service.UserService;
 
 
 

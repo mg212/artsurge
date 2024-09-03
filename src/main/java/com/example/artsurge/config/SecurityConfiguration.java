@@ -1,6 +1,6 @@
 package com.example.artsurge.config;
 
-import com.example.artsurge.service.UserService;
+import com.example.artsurge.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
