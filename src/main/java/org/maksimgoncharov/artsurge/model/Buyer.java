@@ -2,13 +2,15 @@ package org.maksimgoncharov.artsurge.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 // Entity annotation to mark this class as a JPA entity
 @Entity
 // Table annotation to specify the database table name
 @Table(name = "buyers")
 public class Buyer {
-
     // Primary key of the entity
     @Id
     // Specifies that the ID should be automatically generated
@@ -26,6 +28,22 @@ public class Buyer {
     // Column for email
     @Column(name = "email")
     private String email;
+
+    //////////////////////////////
+    //////////////////////////////
+    @OneToMany(mappedBy = "buyer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Artwork> artworks = new ArrayList<>();
+
+    public List<Artwork> getArtworks() {
+        return artworks;
+    }
+
+    public void setArtworks(List<Artwork> artworks) {
+        this.artworks = artworks;
+    }
+//////////////////////////////
+//////////////////////////////
+
 
     // Default constructor
     public Buyer() {

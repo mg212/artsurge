@@ -1,12 +1,6 @@
-/*testFindByEmail_ExistingEmail: Tests if the findByEmail method in the UserService finds an existing user by their email. It creates a test user, mocks the repository to return that user, and then checks if the found user matches the original one.
-
-testFindByEmail_NonExistingEmail: Tests if the findByEmail method in the UserService returns null for a non-existing email. It mocks the repository to return null for a non-existing email and checks if the found user is null.
-
-testSaveUser: Tests if the save method in the UserService saves a new user correctly, including encoding the password. It creates a test user registration DTO, mocks the repository to return a saved user, and checks if the saved user has the correct email and if the password is encoded.*/
-
+/*Tests if the findByEmail method in the UserService finds an existing user by their email. It creates a test user, mocks the repository to return that user, and then checks if the found user matches the original one.*/
 
 package org.maksimgoncharov.artsurge;
-
 import org.maksimgoncharov.artsurge.model.User;
 import org.maksimgoncharov.artsurge.repo.UserRegistrationDto;
 import org.maksimgoncharov.artsurge.repo.UserRepository;
@@ -18,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
