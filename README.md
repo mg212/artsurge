@@ -65,4 +65,4 @@ ArtSurge is an [art gallery management system](https://en.wikipedia.org/wiki/Art
 
 ## Development Notes
 
-These user stories cover the primary functionalities envisioned for the ArtSurge application. The actual implementation will require additional development beyond what is described here, especially for features that are implied but not yet fully realized.
+To be updated. 
