@@ -80,8 +80,6 @@ public class SecurityConfiguration  {
         auth.setPasswordEncoder(passwordEncoder());
         return auth;
     }
-
-
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
