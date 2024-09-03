@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Entity annotation to mark this class as a JPA entity
 @Entity
 @Table(name = "carts")
 public class Cart {

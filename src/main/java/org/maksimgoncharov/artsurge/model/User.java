@@ -1,9 +1,7 @@
 package org.maksimgoncharov.artsurge.model;
-
 import jakarta.persistence.*;
-
-
 import java.util.Collection;
+
 // This annotation marks this class as a JPA entity (persistent object)
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))

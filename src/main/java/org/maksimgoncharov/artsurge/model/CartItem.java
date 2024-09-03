@@ -2,6 +2,7 @@ package org.maksimgoncharov.artsurge.model;
 
 import jakarta.persistence.*;
 
+// Entity annotation to mark this class as a JPA entity
 @Entity
 @Table(name = "cart_items")
 public class CartItem {

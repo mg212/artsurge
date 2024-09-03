@@ -16,6 +16,8 @@ import jakarta.persistence.*;
 
  This class is annotated with @Entity to indicate that it is a JPA entity class.
  */
+
+// Entity annotation to mark this class as a JPA entity
 @Entity
 public class Role {
     @Id
