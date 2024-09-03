@@ -1,5 +1,4 @@
 # 🎨 ArtSurge Application
-
 ## Overview
 
 ArtSurge is an [art gallery management system](https://en.wikipedia.org/wiki/Art_gallery) that enables users to explore and purchase artworks. The system supports different user roles, including admins and buyers, each with specific functionalities tailored to their needs.
@@ -63,6 +62,82 @@ ArtSurge is an [art gallery management system](https://en.wikipedia.org/wiki/Art
 
 - **Multi-Device Access:** Users can access the art gallery system from various devices, including desktop, tablet, and mobile.
 
+
+# ArtSurge 🎨
+
+## SDLC/STLC (V-Model)
+
+### Functional Requirements
+
+#### User Registration and Authentication 🔐
+- New users can register an account.
+- Registered users can securely log in and log out.
+
+#### User Roles 👥
+- Admin users have access to admin-only features.
+- Users are redirected based on their roles.
+
+#### Buyer Management 💼
+- Admins can view, add, update, and delete buyers.
+
+#### Artist Management 🖌️
+- Admins can manage artists (implied).
+
+#### Artwork Management 🖼️
+- Admins can add, update, and remove artworks.
+
+#### Gallery Browsing 🏛️
+- Users can view, search, and view details of artworks.
+
+#### Purchase Process 🛒
+- Buyers can add artworks to a shopping cart and checkout.
+
+#### User Profile 👤
+- Users can view and edit their profile and purchase history.
+
+### Non-Functional Requirements
+
+#### Security 🔒
+- Secure password storage and validation.
+- Password reset functionality.
+
+#### Performance ⚡
+- The application should perform efficiently, especially during peak usage.
+
+#### Usability 🖱️
+- The application should be easy to use and navigate.
+
+#### Reliability 🏋️‍♀️
+- The application should be reliable and avoid crashes or errors.
+
+#### Compatibility 🌐
+- The application should be compatible with different browsers and devices.
+
+#### Accessibility ♿
+- The application should be accessible to users with disabilities.
+
+## ArtSurge Application Requirements Analysis
+
+**ArtSurge** is an online art gallery application that provides a platform for users to browse, purchase, and manage artworks. Key features include:
+
+- **User registration and authentication:** Users can create accounts and securely log in. 🔑
+- **User roles:** Admins have full access, while regular users can browse and purchase. 👑
+- **Buyer management:** Admins can manage buyer information. 📊
+- **Artwork management:** Admins can add, update, and remove artworks. 🎭
+- **Gallery browsing:** Users can search and view artworks. 🔍
+- **Purchase process:** Buyers can add artworks to a shopping cart and checkout. 💳
+- **User profiles:** Users can view and edit their profile information and purchase history. 📝
+- **Security:** Strong password management and secure data handling. 🛡️
+- **Responsive design:** Accessible on various devices. 📱💻🖥️
+
+ArtSurge aims to provide a user-friendly and secure experience for both art buyers and sellers. 🎉
+
 ## Development Notes
 
-To be updated. 
+- **Technology Stack:** Clearly define the chosen technologies (frontend framework, backend language, database) considering project requirements.
+- **Database Design:** Design a robust database schema to efficiently store and retrieve user, artwork, and purchase data.
+- **Security:** Implement strong security measures to protect user data, prevent unauthorized access, and mitigate potential vulnerabilities.
+- **Error Handling:** Implement proper error handling mechanisms to provide informative feedback and log errors for debugging.
+- **Testing:** Write comprehensive unit, integration, and system tests to ensure the application's correctness and reliability.
+
+
