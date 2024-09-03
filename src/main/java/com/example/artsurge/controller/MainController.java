@@ -1,15 +1,6 @@
 package com.example.artsurge.controller;
 
 import java.util.Collection;
-import java.util.List;
-
-
-//import javax.servlet.http.HttpSession;
-
-
-
-
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,113 +10,94 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import jakarta.servlet.http.HttpSession;
 
 import com.example.artsurge.model.Role;
-import com.example.artsurge.model.User;
 import com.example.artsurge.service.UserService;
 
-
-
-
+/**
+ * Controller for handling main application routes.
+ */
 @Controller
 public class MainController {
-
 
     @Autowired
     private UserService userService;
 
-
-//    @GetMapping("/")
-//    public String root(HttpSession session,Authentication authentication) {
-//        //return "index";
-//      System.out.println("IN  MainController->root()");
-//      System.out.println(">>>>>>>USER ="+authentication.getName());
-//      User existing = userService.findByEmail(authentication.getName());
-//      System.out.println("User firstName="+existing.getFirstName());
-//      System.out.println("User lastName="+existing.getLastName());
-//      System.out.println("User Id="+existing.getId());
-//
-//     System.out.println("USER ROLE="+existing.getRoles());
-//
-//
-//     java.util.Collection<Role> roles = existing.getRoles();
-//     String userRole = roles.toString();
-//     System.out.println("COLLECTION USER ROLE="+userRole);
-//
-//     if(userRole.equals("[ROLE_SUPER]")) {
-//        return "redirect:/admin";
-//     }
-//
-//     return "redirect:/buyers";
-//    }
-
-
-    //
-    // UPDATE users_roles   user_id to point to role_id that is superuser in role table
-    // to enable that id to be superuser!
-    //
-    // example:
-    // mysql> update role set name = 'ROLE_SUPER' where id = 2;
-    //
+    /**
+     * Handles the root URL and redirects based on user role.
+     * - Redirects to "/admin" if the user has the "ROLE_SUPER" authority.
+     * - Otherwise, redirects to "/buyers".
+     *
+     * @param session the HTTP session
+     * @return redirect URL based on user role
+     */
     @GetMapping("/")
     public String root(HttpSession session) {
-
-
-        System.out.println("IN  MainController->root()");
-        session.getAttributeNames();
-
+        System.out.println("IN MainController->root()");
 
         Collection<? extends GrantedAuthority> userRoles;
-
-
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
         if (principal instanceof UserDetails) {
             userRoles = ((UserDetails) principal).getAuthorities();
 
-
             for (GrantedAuthority userRole : userRoles) {
                 if (userRole.getAuthority().equals("ROLE_SUPER")) {
-                    System.out.println("USER ROLE="+userRole.getAuthority());
+                    System.out.println("USER ROLE=" + userRole.getAuthority());
                     return "redirect:/admin";
                 }
             }
         }
 
-
         System.out.println("USER ROLE Defaults to Regular USER");
         return "redirect:/buyers";
     }
 
-
+    /**
+     * Displays the admin page.
+     *
+     * @param model the model to be used by the view
+     * @return the view name for admin page
+     */
     @GetMapping("/admin")
     public String admin(Model model) {
-        System.out.println("IN  MainController->admin()");
+        System.out.println("IN MainController->admin()");
         return "admin";
     }
 
-
+    /**
+     * Displays the login page.
+     *
+     * @param model the model to be used by the view
+     * @return the view name for login page
+     */
     @GetMapping("/login")
     public String login(Model model) {
-        System.out.println("IN  MainController->login()");
+        System.out.println("IN MainController->login()");
         return "login";
     }
 
-
+    /**
+     * Displays the user index page.
+     *
+     * @return the view name for user index page
+     */
     @GetMapping("/user")
     public String userIndex() {
-        System.out.println("IN  MainController->userIndex()");
+        System.out.println("IN MainController->userIndex()");
         return "user/index";
     }
 
-
+    /**
+     * Handles logout success and returns a confirmation message.
+     *
+     * @return a confirmation message
+     */
     @ResponseBody
     @GetMapping("/logoutSuccess")
-    public String logoutResponse()
-    {
-        System.out.println("IN  MainController->logoutResponse()");
+    public String logoutResponse() {
+        System.out.println("IN MainController->logoutResponse()");
         return "Logged Out!!!!";
     }
-
-
 }
