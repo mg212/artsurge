@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtSurge</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{https://cdn.jsdelivr.net/npm/bootswatch@3.3.7/cosmo/bootstrap.min.css}" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">ArtSurge</a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/artworks}">View Artworks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/cart}">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/checkout}">Checkout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h2 class="text-center">Featured Artworks</h2>
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4" th:each="artwork : ${artworks}">
+            <div class="card">
+                <img th:src="${artwork.imageUrl}" class="card-img-top" alt="Artwork Image">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${artwork.title}"></h5>
+                    <p class="card-text" th:text="${artwork.description}">Description</p>
+                    <p class="card-text">Price: $ <span th:text="${artwork.price}"></span></p>
+                    <a th:href="@{/artwork/{id}(id=${artwork.id})}" class="btn btn-primary">View Details</a>
+                    <a th:href="@{/cart/add/{id}(id=${artwork.id})}" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
